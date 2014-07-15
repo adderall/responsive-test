@@ -1,0 +1,4 @@
+@mixin jtw-rem($style, $value) {
+    #{$style}: ($value * $base-font) + px; // Fallback for IE
+    #{$style}: $value + rem;
+}

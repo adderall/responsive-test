@@ -1,0 +1,21 @@
+*,
+*:before,
+*:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    background: $background;
+    height: 100%;
+}
+
+#content {
+    text-align: center;
+}
+
+iframe {
+    border: solid #000000 1px;
+}

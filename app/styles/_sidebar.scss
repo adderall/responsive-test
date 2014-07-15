@@ -1,0 +1,57 @@
+#sidebar {
+    background: $gray;
+    color: $background;
+    @include jtw-rem(padding-top, 1.1);
+    @include jtw-rem(padding-bottom, 1.1);
+    @include jtw-rem(padding-left, 1.5);
+    @include jtw-rem(padding-right, 1.5);
+    width: 100%;
+
+    a {
+        color: $background;
+    }
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            display: inline-block;
+            @include jtw-rem(margin-right, 1);
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    input {
+        color: $gray;
+        @include jtw-rem(padding-top, .3);
+        @include jtw-rem(padding-bottom, .3);
+        @include jtw-rem(padding-left, .5);
+        @include jtw-rem(padding-right, .5);
+        @include jtw-rem(max-width, 20);
+        vertical-align: middle;
+    }
+
+    label {
+        color: $heading;
+        display: inline-block;
+        @include jtw-rem(font-size, 1.3);
+        @include jtw-rem(margin-right, .5);
+        vertical-align: middle;
+
+        &[for="vertical"],
+        &[for="horizontal"] {
+            @include jtw-rem(font-size, 1);
+            margin-top: 0;
+        }
+
+        input {
+            margin-bottom: 0;
+            width: auto;
+        }
+    }
+}
