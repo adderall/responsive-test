@@ -16,6 +16,15 @@ body {
     text-align: center;
 }
 
+button.destroy {
+    background: none;
+    border: none;
+    color: red;
+    font-size: 0.8rem;
+    margin-left: 1rem;
+    vertical-align: top;
+}
+
 iframe {
     border: solid #000000 1px;
 }

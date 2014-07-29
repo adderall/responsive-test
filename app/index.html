@@ -27,18 +27,30 @@
                     <ul>
                         <li>
                             <label for="url">URL</label>
-                            {{input type="text" id="url" placeholder="URL or File Name" value=url action="createSize"}}
+                            {{input type="text" id="url" placeholder="URL or File Name" value=url focus-out="changeUrl" insert-newline="changeUrl"}}
                         </li>
 
                         <li>
-                            <label for="sizes">Sizes</label>
-                            {{input type="text" id="sizes" placeholder="Sizes (width x height)" value=sizes action="createSize"}}
+                            <label for="width">Width</label>
+                            {{input type="text" id="width" placeholder="Width" value=width}}
                         </li>
 
                         <li>
-                            <label>Scroll</label>
-                            <label for="vertical"><input type="radio" name="scroll" id="vertical" value="vertical"> Vertical</label>
-                            <label for="horizontal"><input type="radio" name="scroll" id="horizontal" value="horizontal"> Horizontal</label>
+                            <label for="height">Height</label>
+                            {{input type="text" id="height" placeholder="Height" value=height}}
+                        </li>
+
+                        <li>
+                            <label for="title">Title</label>
+                            {{input type="text" id="title" placeholder="Title" value=title}}
+                        </li>
+
+                        <li>
+                            <button {{action "createViewport"}} class="insert">Insert Viewport</button>
+                        </li>
+
+                        <li>
+                            <button {{action "insertStandard"}} class="insert">Insert Standard Viewports</button>
                         </li>
                     </ul>
                 </form>
@@ -46,7 +58,7 @@
 
             <div id="content">
                 {{#each}}
-                    <h3>{{title}}</h3>
+                    <h3>{{title}} <span><button {{action "removeViewport" this}} class="destroy" title="Delete Viewport">x</button></span></h3>
                     <iframe {{bind-attr src=url}} {{bind-attr width=width}} {{bind-attr height=height}} sandbox="allow-same-origin allow-forms allow-scripts" seamless></iframe>
                 {{/each}}
             </div>
@@ -58,6 +70,7 @@
         <script src="../bower_components/handlebars/handlebars.js"></script>
         <script src="../bower_components/ember/ember.js"></script>
         <script src="../bower_components/ember-data/ember-data.js"></script>
+        <script src="../bower_components/ember-localstorage-adapter/localstorage_adapter.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
 

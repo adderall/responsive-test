@@ -1,7 +1,7 @@
 'use strict';
-/* global Jtw, Ember, DS */
+/* global Jtw, Ember */
 
-Jtw.ApplicationAdapter = DS.FixtureAdapter.extend();
+//Jtw.ApplicationAdapter = DS.FixtureAdapter.extend();
 
 Jtw.Router.map(function() {
     this.resource('jtw', {path: '/'});

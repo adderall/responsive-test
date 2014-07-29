@@ -32,14 +32,19 @@
         @include jtw-rem(padding-bottom, .3);
         @include jtw-rem(padding-left, .5);
         @include jtw-rem(padding-right, .5);
-        @include jtw-rem(max-width, 20);
+        @include jtw-rem(max-width, 10);
         vertical-align: middle;
+
+        &#width,
+        &#height {
+            @include jtw-rem(max-width, 5);
+        }
     }
 
     label {
         color: $heading;
         display: inline-block;
-        @include jtw-rem(font-size, 1.3);
+        @include jtw-rem(font-size, 1);
         @include jtw-rem(margin-right, .5);
         vertical-align: middle;
 
@@ -52,6 +57,22 @@
         input {
             margin-bottom: 0;
             width: auto;
+        }
+    }
+
+    button {
+        background: $heading;
+        border: none;
+        color: $gray;
+        @include jtw-rem(padding-top, .4);
+        @include jtw-rem(padding-bottom, .4);
+        @include jtw-rem(padding-left, 1);
+        @include jtw-rem(padding-right, 1);
+
+        &:hover,
+        &:focus,
+        &:active {
+            background: lighten($heading, 10%);
         }
     }
 }
